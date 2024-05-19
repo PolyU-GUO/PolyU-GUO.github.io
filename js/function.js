@@ -3,7 +3,7 @@ let $window = $(window),garden;
 $(function () {
     // setup garden
 	let $loveHeart = $("#loveHeart"),
-	    offsetX = $loveHeart.width() / 2-160,
+	    offsetX = $loveHeart.width() / 2,
 			offsetY = $loveHeart.height() / 2 - 55,
 			$garden = $("#garden"),
 			gardenCanvas = $garden[0],
@@ -27,8 +27,8 @@ $(function () {
 // 返回爱心点的坐标
 function getHeartPoint(angle) {
 	var t = angle / Math.PI;
-	var x = 19.5/3 * (16 * Math.pow(Math.sin(t), 3));
-	var y = - 20/3 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+	var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
+	var y = - 20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
 	return new Array(offsetX + x, offsetY + y);
 }
 
